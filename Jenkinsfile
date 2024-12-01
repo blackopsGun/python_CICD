@@ -52,7 +52,8 @@ pipeline {
                 stage('Deploy To Kubernetes') {
                         steps {
                                 script {
-					sh 'apt-get update && apt-get install -y kubectl'
+					sh 'sudo apt-get update'
+					sh 'apt-get install -y kubectl'
 		                        sh 'kubectl apply -f deployment.yml'
 
 					}
